@@ -1,0 +1,29 @@
+import random
+def generateone(strlen):
+	alphabet="abcdefghijklmnopqrstuvwxyz "
+	res=""
+	for i in range(strlen):
+		res = res + alphabet[random.randrange(27)]
+	return res
+#print(generateone(28))
+
+def score(goal,teststring):
+	numsame=0
+	for i in range(len(goal)):
+		if goal[i]== teststring[i]:
+			numsame=numsame+1
+	return numsame/len(goal)
+
+def main():
+
+	goalstring=" we think its easy"
+	newstring=generateone(28)
+	best=0
+	newscore=score(goalstring,newstring)
+	while newscore<1:
+		if newscore>best:
+			best=newscore
+		newstring= generateone(28)
+		newscore=score(goalstring,newstring)
+
+main()

@@ -1,0 +1,19 @@
+import copy
+
+#example of shallow copy
+l1=[1,2,3,4]
+l2=copy.copy(l1)
+print(l1)
+#l2.append(11)
+print(l2)
+print(id(l1))
+print(id(l2))
+
+#example of deep copy
+print("deep copy example")
+l3=copy.deepcopy(l2)
+l3.append(30)
+print(l3)
+print(id(l3))
+print(l2)
+print(id(l2))
